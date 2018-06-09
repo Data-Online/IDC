@@ -25,6 +25,7 @@ namespace DAL.Models
         public bool IsDiscontinued { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }
+        public bool ztest { get; set; }
 
 
         public int? ParentId { get; set; }

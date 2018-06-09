@@ -31,6 +31,9 @@ import { NotificationService } from './services/notification.service';
 import { NotificationEndpoint } from './services/notification-endpoint.service';
 import { AccountService } from './services/account.service';
 import { AccountEndpoint } from './services/account-endpoint.service';
+import { FarmDataService } from './services/farm-data.service';
+import { FarmDataEndpoint } from './services/farm-data-endpoint.service';
+
 
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./components/login/login.component";
@@ -48,6 +51,8 @@ import { TodoDemoComponent } from "./components/controls/todo-demo.component";
 import { StatisticsDemoComponent } from "./components/controls/statistics-demo.component";
 import { NotificationsViewerComponent } from "./components/controls/notifications-viewer.component";
 import { AddTaskDialogComponent } from './components/controls/add-task-dialog.component';
+import { OfftakesComponent } from './components/offtakes/offtakes.component';
+import { OfftakeViewerComponent } from './components/controls/offtake-viewer/offtake-viewer.component';
 
 @NgModule({
     imports: [
@@ -79,7 +84,7 @@ import { AddTaskDialogComponent } from './components/controls/add-task-dialog.co
         NotFoundComponent,
         NotificationsViewerComponent,
         AddTaskDialogComponent,
-        StatisticsDemoComponent, TodoDemoComponent, BannerDemoComponent
+        StatisticsDemoComponent, TodoDemoComponent, BannerDemoComponent, OfftakesComponent, OfftakeViewerComponent
     ],
     providers: [
         { provide: 'BASE_URL', useFactory: getBaseUrl },
@@ -92,6 +97,8 @@ import { AddTaskDialogComponent } from './components/controls/add-task-dialog.co
         NotificationEndpoint,
         AccountService,
         AccountEndpoint,
+        FarmDataService,
+        FarmDataEndpoint,
         LocalStoreManager,
         EndpointFactory
     ],

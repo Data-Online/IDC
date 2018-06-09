@@ -42,6 +42,7 @@ namespace DAL
         {
             await _context.Database.MigrateAsync().ConfigureAwait(false);
 
+           
             if (!await _context.Users.AnyAsync())
             {
                 _logger.LogInformation("Generating inbuilt accounts");
@@ -58,7 +59,19 @@ namespace DAL
                 _logger.LogInformation("Inbuilt account generation completed");
             }
 
+            if (!await _context.OffTakes.AnyAsync())
+            {
+                _logger.LogInformation("Generating OffTake test data");
 
+                OffTake offtake_1 = new OffTake
+                {
+                    Name = "OT01"
+                };
+
+                _context.OffTakes.Add(offtake_1);
+                await _context.SaveChangesAsync();
+
+            }
 
             if (!await _context.Customers.AnyAsync() && !await _context.ProductCategories.AnyAsync())
             {
@@ -126,7 +139,7 @@ namespace DAL
                 Product prod_1 = new Product
                 {
                     Name = "BMW M6",
-                    Description = "Yet another masterpiece from the world's best car manufacturer",
+                    Description = "Yet another masterpiece from the world's best car manufacturerZ",
                     BuyingPrice = 109775,
                     SellingPrice = 114234,
                     UnitsInStock = 12,

@@ -25,7 +25,7 @@ namespace DAL
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
 
-
+        public DbSet<OffTake> OffTakes { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         { }
@@ -63,6 +63,8 @@ namespace DAL
             builder.Entity<Order>().ToTable($"App{nameof(this.Orders)}");
 
             builder.Entity<OrderDetail>().ToTable($"App{nameof(this.OrderDetails)}");
+
+            builder.Entity<OffTake>().ToTable($"App{nameof(this.OffTakes)}");
         }
 
 

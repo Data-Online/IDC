@@ -272,6 +272,11 @@ export class AppComponent implements OnInit {
         return true;
     }
 
+    // GPA 
+    get canViewOffTakes() {
+        return true;
+    }
+    //
     get canViewUsers() {
         return this.accountService.userHasPermission(Permission.viewUsersPermission);
     }

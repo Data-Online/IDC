@@ -20,6 +20,7 @@ namespace DAL
         ICustomerRepository _customers;
         IProductRepository _products;
         IOrdersRepository _orders;
+        IOffTakesRepository _offTakes;
 
 
 
@@ -28,7 +29,15 @@ namespace DAL
             _context = context;
         }
 
-
+        public IOffTakesRepository OffTakes
+        {
+            get
+            {
+                if (_offTakes == null)
+                    _offTakes = new OffTakesRepository(_context);
+                return _offTakes;
+            }
+        }
 
         public ICustomerRepository Customers
         {
